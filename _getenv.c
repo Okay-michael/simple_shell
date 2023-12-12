@@ -1,10 +1,9 @@
 #include "main.h"
 /**
  * _getenv - gets the value of an environment variable.
- * @name: this is the name of the environment variable.
+ * @name: name of the environment variable.
  *
- * Return: returns the value of the environment variable
- * or NULL if not found or on error.
+ * Return: the environment variable or NULL if not found or on error.
  */
 char *_getenv(const char *name)
 {
