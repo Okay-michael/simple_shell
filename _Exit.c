@@ -19,11 +19,11 @@ int check_if_letter(char *str)
 
 
 /**
- * _E_xit - Handle the exit command with an optional status.
+ * cexit - Handle the exit command with an optional status.
  * @refined: An array of tokens from user input.
  * Return: (0)
  */
-int _E_xit(char **refined)
+int cexit(char **refined)
 {
 	if (refined[1] != NULL)
 	{
