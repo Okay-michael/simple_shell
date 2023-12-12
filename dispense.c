@@ -18,17 +18,17 @@ int dispense(char **args)
 		_setenv(args[1], args[2]);
 		return (0);
 	}
+	if (cstrcmp(args[0], "cd") == 0)
+	{
+		ch_dir(args);
+		return (0);
+	}
 	if (cstrcmp(args[0], "unsetenv") == 0 && args[1] && args[2] == NULL)
 	{
 		if (_unsetenv(args[1]) == 0)
 		{
 			return (0);
 		}
-	}
-	if (cstrcmp(args[0], "cd") == 0)
-	{
-		ch_dir(args);
-		return (0);
 	}
 	if (cexecve(args) == 0)
 		return (0);
