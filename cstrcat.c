@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * cstrcat - this program concatenates two strings
+ * cstrcat - this program concatenates two strings together
  * @src: the original string to concatenate
  * @dest: the other string to be joined to the first
  * Return: the new string
