@@ -27,6 +27,7 @@ int cexecve(char **);
 void tidy_up(char **arr);
 int cexit(char **refined/*, char **usr_input*/);
 int env_print(void);
+void ch_dir(char **refined);
 
 /* Function prototypes*/
 char *_getpath(char *input);
@@ -35,7 +36,6 @@ int _E_path(char **cmdlet);
 int _Execute(char **cmdlet);
 char **tokenizenew(char *str);
 
-void _Explore(char **refined);
 
 #endif /* MAIN_H */
 

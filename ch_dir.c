@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _Explore - this function is used to change the current directory
+ * ch_dir - this function is used to change the current directory
  * (cd command).
  * @refined: this is an array of tokens from user input.
  *
@@ -14,7 +14,7 @@
  *
  * @refined: An array of tokens from user input.
  */
-void _Explore(char **refined)
+void ch_dir(char **refined)
 {
 	if (refined[1] == NULL || cstrcmp(refined[1], "~") == 0)
 	{

@@ -27,7 +27,7 @@ int dispense(char **args)
 	}
 	if (cstrcmp(args[0], "cd") == 0)
 	{
-		_Explore(args);
+		ch_dir(args);
 		return (0);
 	}
 	if (cexecve(args) == 0)
