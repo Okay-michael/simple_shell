@@ -10,7 +10,7 @@ int dispense(char **args)
 {
 	if (cstrcmp(args[0], "env") == 0 && args[1] == NULL)
 	{
-		print_env();
+		env_print();
 		return (0);
 	}
 	if (!cstrcmp(args[0], "setenv") && args[1] && args[2] && !args[3])

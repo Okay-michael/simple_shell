@@ -26,9 +26,9 @@ int dispense(char **args);
 int cexecve(char **);
 void tidy_up(char **arr);
 int cexit(char **refined/*, char **usr_input*/);
+int env_print(void);
 
 /* Function prototypes*/
-int print_env(void);
 char *_getpath(char *input);
 
 int _E_path(char **cmdlet);
