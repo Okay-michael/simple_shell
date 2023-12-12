@@ -28,7 +28,7 @@ int main(void)
 		if (cstrcmp(arg[0], "exit") == 0)
 		{
 			free(usr_command);
-			_E_xit(arg);
+			cexit(arg);
 		}
 		if (dispense(arg) == 0)
 		{

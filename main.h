@@ -25,6 +25,7 @@ char **tokenize_command(char *line);
 int dispense(char **args);
 int cexecve(char **);
 void tidy_up(char **arr);
+int cexit(char **refined/*, char **usr_input*/);
 
 /* Function prototypes*/
 int print_env(void);
@@ -32,7 +33,6 @@ char *_getpath(char *input);
 
 int _E_path(char **cmdlet);
 int _Execute(char **cmdlet);
-int _E_xit(char **refined/*, char **usr_input*/);
 char **tokenizenew(char *str);
 
 void _Explore(char **refined);

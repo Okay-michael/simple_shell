@@ -12,7 +12,6 @@ int check_if_letter(char *str)
 	for (i = 0; str[i]; i++)
 		if (str[i] < '0' || str[i] > '9')
 			return (-1);
-
 	return (1);
 }
 
