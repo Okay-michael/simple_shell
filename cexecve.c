@@ -41,6 +41,8 @@ int cexecve(char **args, char *usr_command)
 			exit_status = WEXITSTATUS(status);
 			if (exit_status  != 0 && !isatty(STDIN_FILENO))
 			{
+				free(usr_command);
+				tidy_up(args);
 				exit(exit_status);
 			}
 		}
