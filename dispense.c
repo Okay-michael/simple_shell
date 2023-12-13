@@ -6,7 +6,7 @@
  *
  *Return: this function returns an integer.
  */
-int dispense(char **args)
+int dispense(char **args, char *usr_command)
 {
 	if (cstrcmp(args[0], "env") == 0 && args[1] == NULL)
 	{
@@ -30,7 +30,7 @@ int dispense(char **args)
 			return (0);
 		}
 	}
-	if (cexecve(args) == 0)
+	if (cexecve(args, usr_command) == 0)
 		return (0);
 	return (1);
 }

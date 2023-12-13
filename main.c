@@ -30,7 +30,7 @@ int main(void)
 			free(usr_command);
 			cexit(arg);
 		}
-		if (dispense(arg) == 0)
+		if (dispense(arg, usr_command) == 0)
 		{
 			tidy_up(arg);
 			continue;

@@ -1,11 +1,11 @@
 #include "main.h"
-int cexeve(char **cnd);
+int cexeve(char **cnd, char *usr_command);
 /**
  * cexecve - This is where the execve is called on the args
  * @args: tokenized array of the user command
  * Return: int
  */
-int cexecve(char **args)
+int cexecve(char **args, char *usr_command)
 {
 	int pid, exit_status, status;
 
@@ -24,6 +24,8 @@ int cexecve(char **args)
 		write(2, ": ", 2);
 		write(2, args[0], cstrlen(args[0]));
 		write(2, ": not found\n", 12);
+		tidy_up(args);
+		free(usr_command);
 		exit(EXIT_FAILURE);
 	}
 	else if (pid < 0)
