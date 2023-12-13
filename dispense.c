@@ -3,6 +3,7 @@
 /**
  * dispense - dispatches commands to appropriate handlers.
  * @args: An array of tokens from user input.
+ * @usr_command: this is the command entered by the user
  *
  *Return: this function returns an integer.
  */

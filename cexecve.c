@@ -3,6 +3,7 @@ int cexeve(char **cnd, char *usr_command);
 /**
  * cexecve - This is where the execve is called on the args
  * @args: tokenized array of the user command
+ * @usr_command: this is the command entered by the user
  * Return: int
  */
 int cexecve(char **args, char *usr_command)
