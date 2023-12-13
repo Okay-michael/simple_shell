@@ -43,6 +43,7 @@ int cexit(char **refined)
 					cstrlen("./hsh: 1: exit: Illegal number: "));
 			write(2, refined[1], cstrlen(refined[1]));
 			write(2, "\n", 1);
+			tidy_up(refined);
 			exit(2);
 		}
 		exit_status = catoi(refined[1]);
