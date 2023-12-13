@@ -9,7 +9,14 @@ int check_if_letter(char *str)
 {
 	int i = 0;
 
-	for (i = 0; str[i]; i++)
+	if (str[0] == '\0' || (str[0] == '-' && str[1] == '\0'))
+		return (-1);
+
+	/* Skip the '-' sign if present at the beginning*/
+	if (str[0] == '-')
+		i = 1;
+
+	for (; str[i]; i++)
 		if (str[i] < '0' || str[i] > '9')
 			return (-1);
 	return (1);
