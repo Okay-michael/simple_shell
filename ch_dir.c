@@ -1,19 +1,9 @@
 #include "main.h"
-/**
- * ch_dir - this function is used to change the current directory
- * (cd command).
- * @refined: this is an array of tokens from user input.
- *
- * This function handles the 'cd' command, which changes the current
- * directory, it supports the following cases:
- * - If no directory argument is provided or the argument is '~', it
- * changes to the user's home directory.
- * - If the argument is '-', it changes to the previous working directory.
- * - If any other valid directory argument is provided, it changes to that
- * directory.
- *
- * @refined: An array of tokens from user input.
- */
+
+void cwrite(int fd, const char *str) {
+    write(fd, str, strlen(str));
+}
+
 void ch_dir(char **refined)
 {
 	if (refined[1] == NULL || cstrcmp(refined[1], "~") == 0)
@@ -22,12 +12,18 @@ void ch_dir(char **refined)
 
 		if (home == NULL)
 		{
-			perror("cd: HOME not set");
+			cwrite(2, "cd: HOME not set\n");
 		}
 		else
 		{
 			if (chdir(home) == -1)
 				perror("cd");
+			else
+			{
+				setenv("OLDPWD", getenv("PWD"), 1);
+				cwrite(1, home);
+				cwrite(1, "\n");
+			}
 		}
 	}
 	else if (cstrcmp(refined[1], "-") == 0)
@@ -36,17 +32,31 @@ void ch_dir(char **refined)
 
 		if (old_pwd == NULL)
 		{
-			perror("cd: OLDPWD not set");
+			cwrite(2, "cd: OLDPWD not set\n");
 		}
 		else
 		{
+			char *current_dir = getenv("PWD");
 			if (chdir(old_pwd) == -1)
 				perror("cd");
+			else
+			{
+				cwrite(1, old_pwd);
+				cwrite(1, "\n");
+				setenv("OLDPWD", current_dir, 1);
+			}
 		}
 	}
 	else
 	{
+		char *current_dir = getenv("PWD");
 		if (chdir(refined[1]) == -1)
 			perror("cd");
+		else
+		{
+			cwrite(1, refined[1]);
+			cwrite(1, "\n");
+			setenv("OLDPWD", current_dir, 1);
+		}
 	}
 }
